@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+</head>
+<body>
+<center>
+
+
+<h2> <b>Please Select at Least one <b><h2>
+<br>
+<br>
+<form>
+
+<a href="http://192.168.43.128/cgi-bin/job_tracker.py"  type="submit" name="hdp" value="ls" class="w3-btn w3-orange" style="vertical-align:middle"><span>Jobtracker</span></a>
+<a href="http://192.168.43.128/cgi-bin/task_tracker.py"  type="submit" name="hdp" value="ls" class="w3-btn w3-orange" style="vertical-align:middle"><span>Tasktracker</span></a>
+</form>
+</body>
+</html>
