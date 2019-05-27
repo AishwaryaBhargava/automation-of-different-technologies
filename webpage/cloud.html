@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+</head>
+<body>
+<center>
+
+<blink><h2> <b>Please select at least One Service <b><h2></blink>
+<form>
+<a href="http://192.168.43.128/cgi-bin/caas.py"  type="submit" name="hdp" value="ls" class="w3-btn w3-red" style="vertical-align:middle"> <span>Container as a Service </span></a>
+<a href="http://192.168.43.128/cgi-bin/saas.py"  type="submit" name="hdp" value="ls" class="w3-btn w3-red" style="vertical-align:middle"> Software as a Service </a>
+<br>
+<br>
+<a href="http://192.168.43.128/cgi-bin/paas.py"  type="submit" name="hdp" value="ls" class="w3-btn w3-red" style="vertical-align:middle"> Platform as a Service</a>
+<a href="cloud2.html"  type="submit" name="hdp" value="ls" class="w3-btn w3-red" style="vertical-align:middle"> Storage as a Service </a>
+
+</form>
+</body>
+</html>
