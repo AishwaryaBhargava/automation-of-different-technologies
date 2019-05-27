@@ -1,0 +1,15 @@
+- hosts: localhost
+  tasks:
+    - copy:
+        src: "/root/Desktop/splunk-7.1.0-2e75b3406c5b-linux-2.6-x86_64.rpm"
+        dest: "/root/Desktop/"
+      ignore_errors: yes
+    - command: "rpm -ivh /root/Desktop/splunk-7.1.0-2e75b3406c5b-linux-2.6-x86_64.rpm"
+      ignore_errors: yes
+    - command: "rpm -ivh /root/Desktop/splunk-7.1.0-2e75b3406c5b-linux-2.6-x86_64.rpm --force"
+    - blockinfile:
+           path: "/root/.bashrc"
+           block: |
+                   export  JAVA_HOME=/opt/splunk
+                   export PATH=/usr/opt/splunk/bin/:$PATH
+

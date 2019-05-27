@@ -1,0 +1,19 @@
+- hosts: localhost
+  tasks:
+    - service:
+       name: "firewalld"
+       state: stopped
+
+    - file:
+       path: "/root/Desktop/automation\ work/datanode"
+       state: directory
+    - copy:
+       src: "/root/Desktop/automation\ work/slave-hdfs-site.xml"
+       dest: "/etc/hadoop/hdfs-site.xml"
+
+
+    - copy:
+        src: "/root/Desktop/automation\ work/core-site.xml"
+        dest: "/etc/hadoop/core-site.xml"
+    - command: "hadoop-daemon.sh start datanode"
+

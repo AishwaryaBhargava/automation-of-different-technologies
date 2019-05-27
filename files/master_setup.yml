@@ -1,0 +1,29 @@
+- hosts: localhost
+  tasks:
+    - service:
+       name: "firewalld"
+       state: stopped 
+    - copy:
+       src: "/root/Desktop/automation\ work/master-hdfs-site.xml"
+       dest: "/etc/hadoop/hdfs-site.xml"
+
+
+    - copy:
+        src: "/root/Desktop/automation\ work/core-site.xml"
+        dest: "/etc/hadoop/core-site.xml"
+    - file:
+       path: "/root/Desktop/automation\ work/namenode"
+       state: directory
+        
+    - command: "hadoop namenode -format -force"
+      register: x
+    - command: "hadoop-daemon.sh start namenode" 
+      register: y
+    
+
+    - debug:
+        msg: "{{ x }}"
+    - debug:
+        msg: "{{ y }}"
+
+    

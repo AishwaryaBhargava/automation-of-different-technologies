@@ -1,0 +1,4 @@
+- hosts: localhost
+  tasks: 
+        - shell: "sudo docker run -dit --name mycc1 -p 3333:4200  shellinabox:v1"
+

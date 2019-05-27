@@ -1,0 +1,13 @@
+- hosts: localhost
+  tasks:
+        - file:
+                path: "/media/dropbox"
+                state: directory
+                owner: "apache"
+                mode: 2777
+
+        - mount:
+                path: "/media/dropbox"
+                src: "192.168.43.23:/cloud/registration"
+                state: mounted
+                fstype: ext4                

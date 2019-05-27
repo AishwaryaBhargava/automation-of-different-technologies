@@ -1,0 +1,17 @@
+- hosts: localhost
+  tasks:
+    - service:
+         name: "firewalld"
+         state: stopped
+
+    - copy:
+       src: "/root/Desktop/automation\ work/mapred-site.xml"
+       dest: "/etc/hadoop/mapred-site.xml"
+
+
+    - copy:
+        src: "/root/Desktop/automation\ work/core-site.xml"
+        dest: "/etc/hadoop/core-site.xml"
+
+    - command:
+         "hadoop-daemon.sh start jobtracker"
